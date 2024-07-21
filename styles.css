@@ -1,0 +1,949 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    /* display: flex; */
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+.drawer {
+    width: 200px;
+    background-color: #6e6e6e;
+    color: #ffffff;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    /* margin-left: 20px; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.drawer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer nav ul li {
+    margin: 20px 0;
+}
+
+.drawer nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.drawer nav ul li a:hover {
+    text-decoration: underline;
+    /* background-color: #3b3b3b; */
+
+}
+
+.drawer nav ul .dropdown {
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+
+.drawer nav ul .dropdown li {
+    padding: 5px 20px;
+    font-size: 16px;
+}
+
+.drawer nav ul .dropdown li:hover {
+    background-color: #3b3b3b;
+    cursor: pointer;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.container {
+    background-color: #3b3b3b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+   
+}
+
+input[type="text"] {
+    
+    width: 50%;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    display: inline-block;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #444444;
+}
+
+td {
+    background-color: #555555;
+}
+
+.edit {
+    background-color: #ffc107;
+    margin-right: 5px;
+}
+
+.delete {
+    background-color: #dc3545;
+}
+
+.edit:hover {
+    background-color: #e0a800;
+}
+
+.delete:hover {
+    background-color: #c82333;
+}
+
+.more-screen {
+    display: none;
+}
+
+.more-screen.active {
+    display: block;
+}
+
+
+
+
+
+
+/*                  Multiple Tab                                               */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #7c7c7c;
+    background-color: #72bd5f;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #b9b9b9;
+}
+
+.tab button.active {
+    background-color: #7e7e7e;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+
+
+/*                       Sub menu                   */
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Navigation links */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Add a red background color to navigation links on hover */
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+    background-color: red;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+
+
+/*                     main menu                  */
+
+
+.mainmenu {
+    margin-top: 100px;
+    color: #000000;
+}
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+/*                     Multivalue AutoComplate lable               */
+
+/* styles.css */
+.autocomplete-container {
+margin-top: 100px;
+    position: relative;
+
+
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #5a5a5a;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.autocomplete-items li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.autocomplete-items li:hover {
+    background-color: #8ac0325d;
+}
+
+.autocomplete-selected {
+    background-color: #000000;
+}
+
+
+
+/*                 Collapsible           */
+.collapsible {
+    
+    margin-top: 50px;
+    background-color: #ff8b8b;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    
+  } 
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+ .collapsible:hover {
+    background-color: #f86a6a;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content_Collapsible {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #575757;
+  }
+  
+
+
+  /*                      multiple Collapsible                     */
+ 
+
+  
+
+.accordion-header {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff8b8b;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    /* cursor: pointer; */
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    background-color: #f86a6a;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #575757;
+}
+
+.accordion-content p {
+    padding: 15px;
+    margin: 0;
+}
+
+
+/*                  image                 */
+
+
+
+.image_container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #777a76;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+image_name_input{
+    border-color: #f10000;
+}
+
+
+.upload-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* .upload-section input[type="text"] {
+
+    width: 50%;
+    
+    border: #28a745;
+} */
+
+.upload-section button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upload-section button:hover {
+    background-color: #218838;
+}
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-item {
+    position: relative;
+    width: 150px;
+    border: 1px solid #4e4e4e;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #8de2548c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.image-item .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 5px;
+    font-size: 30px;
+}
+
+.image-item .remove-button:hover {
+    background-color: #c82333;
+}
+
+
+/*                      Slider                 */
+
+
+.slider-container {
+    margin-top: 20px;
+}
+
+input[type="range"] {
+    width: 100%;
+    max-width: 3000px;
+}
+
+
+
+/*                             Tooltips                  */
+
+.tooltip-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tooltip-button {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.tooltip-button:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-button:hover::after {
+    opacity: 1;
+}
+
+
+
+/*                      popups               */
+.container {
+    /* justify-content: center; */
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#popupButton {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    /* background-color: #007bff; */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#popupButton:hover {
+    background-color: #0056b3;
+}
+
+
+/* 3n popup */
+
+
+#openModalBtn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    /* background-color: #007bff; */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#openModalBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #797979;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background-color: #c9302c;
+}
+
+
+
+/* Links */
+.link-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+
+/*              Image links           */
+
+.image_link-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.image_link img {
+    width: 150px;  /* Set the width of the images */
+    height: auto;  /* Maintain the aspect ratio */
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.image_link img:hover {
+    transform: scale(1.1);  /* Slightly enlarge the image on hover */
+    border-color: #0056b3;
+
+}
+
+/*             status Code Link             */
+
+
+.status_link-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.status_link1 {
+    text-decoration: none;
+    color: #196317;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.status_link2 {
+    text-decoration: none;
+    color: #2b38f7;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.status_link3 {
+    text-decoration: none;
+    color: #f30b0b;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.status_link4 {
+    text-decoration: none;
+    color: #c72626;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+
+
+.lable_container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.lable1{
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+.lable2{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.lable3{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: green;
+}
+.lable4{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #00ffea;
+    border-radius: 5px;
+    background-color: #00ffea;
+}
+.lable5{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #d9ff00;
+    border-radius: 5px;
+    background-color: #b9ff00;
+}
+
+/* Buttons */
+
+.button_container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.b1{
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.b2{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.b3{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: green;
+}
+.b4{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #00ffea;
+    border-radius: 5px;
+    background-color: #00ffea;
+}
+.b5{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #d9ff00;
+    border-radius: 5px;
+    background-color: #b9ff00;
+}
+
+/*                  Alerts                  */
+.alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.alert-info {
+    background-color: #00c0ff;
+}
+
+.alert-warning {
+    background-color: #ff9800;
+}
+
+.alert-danger {
+    background-color: #f44336;
+}
+
+.closebtn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+
+/* Progress Bar */
+.progress-container {
+    width: 80%;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.progress-bar {
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    margin-bottom: 10px;
+    transition: width 0.3s;
+}
+
+.progress-bar-green {
+    background-color: #4caf50;
+}
+
+.progress-bar-blue {
+    background-color: #00c0ff;
+}
+
+.progress-bar-orange {
+    background-color: #ff9800;
+}
+
+.progress-bar-red {
+    background-color: #f44336;
+}
+
+
+
+/*             Iframe         */
+.iframe-container {
+    width: 80%;
+    height: 80%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application with Drawer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="drawer">
+        <nav>
+            <ul>
+                <li><a href="#crudSection" onclick="showSection('crudSection')">CRUD</a></li>
+                <li>
+                    <a href="#moreSection" onclick="toggleDropdown('moreDropdown')">More</a>
+                    <ul id="moreDropdown" class="dropdown">
+                        <li><a href="#" onclick="showMoreScreen('multiTabScreen')">Multiple Tabs</a></li>
+                        <li><a href="#" onclick="showMoreScreen('menuScreen')">Menu</a></li>
+                        <li><a href="#" onclick="showMoreScreen('autocompleteScreen')">Autocomplete</a></li>
+                        <li><a href="#" onclick="showMoreScreen('Collapsiblescreen')"> collapsible Content</a></li>
+
+                        <li><a href="#" onclick="showMoreScreen('imagescreen')"> Images</a></li>
+                        <li><a href="#" onclick="showMoreScreen('sliderscreen')"> Slider</a></li>
+                        <li><a href="#" onclick="showMoreScreen('tooltipsscreen')"> Tooltips</a></li>
+                        <li><a href="#" onclick="showMoreScreen('popupsscreen')"> Popups</a></li>
+                        <li><a href="#" onclick="showMoreScreen('linkScreen')"> Links</a></li>
+                        <li><a href="#" onclick="showMoreScreen('cssPropertiesScreen')"> CSS Properties</a></li>
+                        <li><a href="#" onclick="showMoreScreen('iframescreen')"> iFrame</a></li>
+
+                        <!-- <li>Images</li>
+                        <li>Slider</li>
+                        <li>Tooltips</li>
+                        <li>Popups</li>
+                        <li>Links</li>
+                        <li>CSS Properties</li>
+                        <li>iFrames</li> -->
+                    </ul>
+                </li>
+                <li><a href="#settingsSection" onclick="showSection('settingsSection')">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <section id="crudSection" class="active">
+            <h1>CRUD Application</h1>
+            <form id="crudForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="rollNo">Roll No</label>
+                    <input type="text" id="rollNo" placeholder="Enter Roll No">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Roll No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </section>
+        <section id="moreSection">
+            <h1>More Section</h1>
+            <p>Select an item from the dropdown in the drawer.</p>
+
+            <div id="moreScreens">
+                <div id="multiTabScreen" class="more-screen">
+                    <h2>Multiple Tabs</h2>
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'London')">HOME</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')">TECHNOLOGIES</button>
+                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">CODING FOR KIDS</button>
+                    </div>
+
+                    <!-- Tab content -->
+                    <div id="London" class="tabcontent">
+                        <h3>HOME</h3>
+                        <p>Wellcome to Zala Acadmy</p>
+                    </div>
+
+                    <div id="Paris" class="tabcontent">
+                        <h3>TECHNOLOGIES</h3>
+                        <p>Learn One or All Technologies for 10 Years at no extra Fee</p>
+                    </div>
+
+                    <div id="Tokyo" class="tabcontent">
+                        <h3>CODING FOR KIDS</h3>
+                        <p>Why JALA Academy is Best for Kids</p>
+                    </div>
+                </div>
+
+
+                <div id="menuScreen" class="more-screen">
+                    <h2>Sub Menu</h2>
+
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    <!-- The navigation menu -->
+                    <div class="navbar">
+                        <a href="#home">Home</a>
+                        <div class="subnav">
+                            <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="#company">Company</a>
+                                <a href="#team">Team</a>
+                                <a href="#careers">Careers</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="#bring">Bring</a>
+                                <a href="#deliver">Deliver</a>
+                                <a href="#package">Package</a>
+                                <a href="#express">Express</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="#link1">Link 1</a>
+                                <a href="#link2">Link 2</a>
+                                <a href="#link3">Link 3</a>
+                                <a href="#link4">Link 4</a>
+                            </div>
+                        </div>
+                        <a href="#contact">Contact</a>
+                    </div>
+
+
+
+                    <div class="mainmenu">
+                        <h2>Main menu</h2>
+
+                        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+                        <!-- <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+                        <!-- Top Navigation Menu -->
+                        <div class="topnav">
+                            <a href="#home" class="active">Logo</a>
+                            <!-- Navigation links (hidden by default) -->
+                            <div id="myLinks">
+                                <a href="#news">News</a>
+                                <a href="#contact">Contact</a>
+                                <a href="#about">About</a>
+                            </div>
+                            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="autocompleteScreen" class="more-screen">
+                    <h2>Autocomplete</h2>
+                    <div>
+                        <label for="input" class="auto_compl_lable">Language</label>
+                        <input type="text" id="input" class="auto_compl_input" />
+                        <ul id="suggestions" class="suggestions"></ul>
+                    </div>
+
+
+
+                    <div class="autocomplete-container">
+                        <h2>MultiValue Auto Complate</h2>
+                        <input type="text" id="autocomplete-input" placeholder="Enter values">
+                        <ul id="autocomplete-list" class="autocomplete-items"></ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div id="Collapsiblescreen" class="more-screen">
+                    <h2>collapsible</h2>
+                    <button type="button" class="collapsible">Guaranteed Additional Placement</button>
+                    <div class="content_Collapsible">
+                        <p>20% guaranteed additional Placements in MNCs for Technical roles (Not for support jobs).</p>
+                    </div>
+
+                    <button type="button" class="collapsible">Solid Brand Name</button>
+                    <div class="content_Collapsible">
+                        <p>Creating solid brand name to the college, so more enrolments, more revenue to the college</p>
+                    </div>
+
+
+                    <h2>Multiple collapsible</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">Know your goals and Properties wisely</button>
+                            <div class="accordion-content">
+                                <p>What are your priorities for the day? Make a list of your priorities and plan your
+                                    day. The tasks of the day must be outlined with the most important and urgent ones
+                                    on top.
+
+
+                                    Likewise, determine your short-term and long-term goals and evaluate your progress
+                                    frequently</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Be Fouced and eliminate distractions</button>
+                            <div class="accordion-content">
+                                <p>Are you really present physically and mentally. Try to block out all distractions so
+                                    that you have</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Chose the right mentor ro succees in career</button>
+                            <div class="accordion-content">
+                                <p>There is a big difference between a mentor and a coach
+
+                                    Mentoring is a long-term process based on mutual trust and respect. Coaching, on the
+                                    other hand, is for a short period of time.
+
+                                    The topmost priority of a mentor is to help develop skills that are not just
+                                    relevant for the mentees in their present job, but also for the future. A mentor has
+                                    the first-hand experience in the industry</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div id="imagescreen" class="more-screen">
+                    <h2>Image Screen</h2>
+                    <div class="image_container">
+                        <div class="upload-section">
+                            <label for="fileInput">Select File:</label>
+                            <input type="file" id="fileInput">
+                            <label for="fileName">File Name:</label>
+                            <input type="text" id="fileName" placeholder="File Name" class="image_name_input">
+                            <button id="uploadButton">Upload</button>
+                        </div>
+                        <h3>List Of Images:</h3>
+                        <div id="imageList" class="image-list"></div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="sliderscreen" class="more-screen">
+                    <h2>Slider</h2>
+                    <div class="slider-container">
+                        <label for="volumeSlider">Slider:</label>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div id="tooltipsscreen" class="more-screen">
+                    <h2>Tooltips</h2>
+                    <div class="tooltip-container">
+                        <button class="tooltip-button" data-tooltip="This is a tooltip!">Hover over me</button>
+                        <button class="tooltip-button" data-tooltip="Another tooltip!">Hover over me too</button>
+                        <button class="tooltip-button" data-tooltip="Yet another tooltip!">And me!</button>
+                    </div>
+                </div>
+
+
+
+
+                <div id="popupsscreen" class="more-screen">
+                    <h2>Popup</h2>
+                    <div class="container">
+                        <button id="popupButton">Open Popup</button>
+                    </div>
+
+
+                    <div class="container">
+                        <a href="https://jalaacademy.com" target="_blank" id="popupLink">
+                            <button id="popupButton">Open Popup in tab</button>
+                        </a>
+                    </div>
+
+
+                    <div class="container">
+                        <button id="openModalBtn">Open Popup</button>
+                    </div>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Popup One</h2>
+                            <p>Popup One body..</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <button id="closeModalBtn" class="close-btn">Close</button>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="container">
+                        <button id="alertButton">Show Alert</button>
+                    </div>
+
+
+                    <div class="container">
+                        <button id="confirmButton">Show Confirm Box</button>
+                    </div>
+
+                    <div class="container">
+                        <button onclick="showPrompt()">Show Prompt</button>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div id="linkScreen" class="more-screen">
+                    <h2>Links</h2>
+                    <div class="link-container">
+                        <a href="https://jalaacademy.com" target="_blank" class="link" id="link1">jala Acadmy</a>
+                        <a href="http://magnus.jalatechnologies.com" target="_blank" class="link" id="link2">Programer
+                            test</a>
+                        <a href="https://jalaacademy.com/careers.html" target="_blank" class="link"
+                            id="link3">Carrers</a>
+
+                    </div>
+                    <h2>Broken Links</h2>
+
+                    <div class="link-container">
+                        <a href="https://magnus.jalatechnologies.com/Home/www.brokenlinkcheck.com/" target="_blank"
+                            class="link" id="link1">Link 1</a>
+                        <a href="https://magnus.jalatechnologies.com/Home/www.brokenlinkcheck.com/" target="_blank"
+                            class="link" id="link2">Link 2</a>
+                        <a href="https://magnus.jalatechnologies.com/Home/www.brokenlinkcheck.com/" target="_blank"
+                            class="link" id="link3">Link 3</a>
+                    </div>
+
+                    <h2>Image Links</h2>
+                    <div class="image_link-container">
+                        <a href="https://jalaacademy.com" target="_blank" class="image_link" id="link1">
+                            <img src="jala.png" alt="Image 1">
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" class="image_link" id="link2">
+                            <img src="facebook.png" alt="Image 2">
+                        </a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="image_link" id="link3">
+                            <img src="whatsapp.png" alt="Image 3">
+                        </a>
+                    </div>
+
+                    <h2>Status Code Link</h2>
+                    <div class="status_link-container">
+                        <a href="https://www.restapitutorial.com/httpstatuscodes" target="_blank" class="status_link1"
+                            id="link1">200</a>
+                        <a href="https://magnus.jalatechnologies.com/ErrorHandler/RedirectPermanently" target="_blank"
+                            class="status_link2" id="link2">301</a>
+                        <a href="https://magnus.jalatechnologies.com/ErrorHandler/NotFound" target="_blank"
+                            class="status_link3" id="link3">404</a>
+                        <a href="https://magnus.jalatechnologies.com/ErrorHandler/InternalServerError" target="_blank"
+                            class="status_link4" id="link3">500</a>
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div id="cssPropertiesScreen" class="more-screen">
+                    <h2>Css Properties</h2>
+                    <h2>Link</h2>
+                    <div class="status_link-container">
+                        <a href="https://jalaacademy.com" target="_blank" class="status_link1" id="link1">link1</a>
+                        <a href="https://jalaacademy.com" target="_blank" class="status_link2" id="link2">Link2</a>
+                        <a href="https://jalaacademy.com" target="_blank" class="status_link3" id="link3">Link3</a>
+                        <a href="https://jalaacademy.com" target="_blank" class="status_link4" id="link3">Link4</a>
+                    </div>
+
+                    <h2>Labels</h2>
+                    <div class="lable_container">
+                        <label for="fileName" class="lable1">Defualt</label>
+                        <label for="fileName" class="lable2">primary</label>
+                        <label for="fileName" class="lable3">Succees</label>
+                        <label for="fileName" class="lable4">info</label>
+                        <label for="fileName" class="lable5">Warning</label>
+                    </div>
+
+                    <h2>Buttons</h2>
+                    <div class="button_container">
+                        <button for="fileName" class="b1">Defualt</button>
+                        <button for="fileName" class="b2">primary</button>
+                        <button for="fileName" class="b3">Succees</button>
+                        <button for="fileName" class="b4">info</button>
+                        <button for="fileName" class="b5">Warning</button>
+                    </div>
+
+                    <h2>Alerts</h2>
+                    <div class="alert alert-info">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Info!</strong> Indicates a neutral informative change or action.
+                    </div>
+                    <div class="alert alert-warning">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Warning!</strong> Indicates a warning that might need attention.
+                    </div>
+                    <div class="alert alert-danger">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                    </div>
+
+                    <h2>Progress Bar</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar progress-bar-green" style="width: 70%;">70%</div>
+                        <div class="progress-bar progress-bar-blue" style="width: 50%;">50%</div>
+                        <div class="progress-bar progress-bar-orange" style="width: 60%;">60%</div>
+                        <div class="progress-bar progress-bar-red" style="width: 90%;">90%</div>
+                    </div>
+            
+
+
+
+                </div>
+                <div id="iframescreen" class="more-screen">
+                    <h2>IFrame</h2>
+                    <div class="iframe-container">
+                        <iframe src="https://www.example.com" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="settingsSection">
+            <h1>Settings</h1>
+            <!-- Settings content goes here -->
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
